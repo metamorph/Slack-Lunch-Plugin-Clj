@@ -44,8 +44,6 @@
     (swap! status cmd) ;; Update the state
     (render-channel-status @status (get-in req [:params :channel_name]))))
 
-;; TODO: Maybe move middleware to separate ns?
-
 (defn verify-token
   "Middleware that asserts that the request contains a valid token"
   [handler required-token]
